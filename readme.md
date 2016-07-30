@@ -45,6 +45,7 @@ The returned object wraps the following methods in addition to exposing utility 
 * [`bitcoinReceiver.pollReceiver`](https://stripe.com/docs/stripe.js#bitcoinreceiver-pollreceiver)
 * `bitcoinReceiver.getReceiver` (undocumented)
 
+This configuration is exposed as `stripeErrback.methods` with `{async, sync}` containing arrays of dot property paths.
 
 ## License
 

@@ -1,7 +1,7 @@
 {
   "name": "stripe-errback",
   "main": "index.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Wrap Stripe.js async methods to use node-style callbacks",
   "license": "MIT",
   "repository": "bendrucker/stripe-errback",

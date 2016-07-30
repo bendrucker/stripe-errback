@@ -1,0 +1,39 @@
+{
+  "name": "stripe-errback",
+  "main": "index.js",
+  "version": "0.0.0",
+  "description": "Wrap Stripe.js async methods to use node-style callbacks",
+  "license": "MIT",
+  "repository": "bendrucker/stripe-errback",
+  "author": {
+    "name": "Ben Drucker",
+    "email": "bvdrucker@gmail.com",
+    "url": "bendrucker.me"
+  },
+  "scripts": {
+    "test": "standard && zuul --phantom -- test.js"
+  },
+  "keywords": [
+    "stripe",
+    "browser",
+    "stripe.js",
+    "node",
+    "callback",
+    "errback"
+  ],
+  "devDependencies": {
+    "phantomjs-prebuilt": "^2.1.9",
+    "sinon": "^1.17.5",
+    "standard": "^7.1.2",
+    "stripe-debug": "^2.0.0",
+    "tape": "^4.0.0",
+    "zuul": "^3.10.3"
+  },
+  "files": [
+    "*.js"
+  ],
+  "dependencies": {
+    "dot-prop": "~3.0.0",
+    "xtend": "~4.0.1"
+  }
+}

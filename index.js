@@ -3,41 +3,42 @@
 var assign = require('xtend/mutable')
 var dot = require('dot-prop')
 
+var methods = stripeErrback.methods = {
+  async: [
+    'card.createToken',
+    'bankAccount.createToken',
+    'piiData.createToken',
+    'bitcoinReceiver.createReceiver',
+    'bitcoinReceiver.pollReceiver',
+    'bitcoinReceiver.getReceiver'
+  ],
+  sync: [
+    'setPublishableKey',
+    'card.validateCardNumber',
+    'card.validateExpiry',
+    'card.validateCVC',
+    'card.cardType',
+    'bankAccount.validateRoutingNumber',
+    'bankAccount.validateAccountNumber',
+    'bitcoinReceiver.cancelReceiverPoll'
+  ]
+}
+
 module.exports = stripeErrback
-
-var asyncMethods = [
-  'card.createToken',
-  'bankAccount.createToken',
-  'piiData.createToken',
-  'bitcoinReceiver.createReceiver',
-  'bitcoinReceiver.pollReceiver',
-  'bitcoinReceiver.getReceiver'
-]
-
-var syncMethods = [
-  'setPublishableKey',
-  'card.validateCardNumber',
-  'card.validateExpiry',
-  'card.validateCVC',
-  'card.cardType',
-  'bankAccount.validateRoutingNumber',
-  'bankAccount.validateAccountNumber',
-  'bitcoinReceiver.cancelReceiverPoll'
-]
 
 function stripeErrback (Stripe) {
   if (typeof Stripe !== 'function') throw new Error('Stripe.js must be provided')
 
   var stripe = {}
 
-  asyncMethods.forEach(function (method) {
+  methods.async.forEach(function (method) {
     var names = method.split('.')
     var receiverName = names[0]
     var methodName = names[1]
     dot.set(stripe, method, toErrback(methodName, Stripe[receiverName]))
   })
 
-  syncMethods.forEach(function (method) {
+  methods.sync.forEach(function (method) {
     dot.set(stripe, method, dot.get(Stripe, method))
   })
 

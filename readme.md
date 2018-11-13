@@ -1,4 +1,4 @@
-# stripe-errback [![Build Status](https://travis-ci.org/bendrucker/stripe-errback.svg?branch=master)](https://travis-ci.org/bendrucker/stripe-errback)
+# stripe-errback [![Build Status](https://travis-ci.org/bendrucker/stripe-errback.svg?branch=master)](https://travis-ci.org/bendrucker/stripe-errback) [![Greenkeeper badge](https://badges.greenkeeper.io/bendrucker/stripe-errback.svg)](https://greenkeeper.io/)
 
 > Wrap Stripe.js async methods to use node-style callbacks
 
